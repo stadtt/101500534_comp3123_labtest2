@@ -1,0 +1,31 @@
+import React, { useState, useEffect} from "react";
+import weatherAPI from "../api/weatherAPI";
+
+function ViewWeather(){
+    const[details, setDetails] = useState(null)
+    const getWeatherDetails = async () => {
+
+        
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
