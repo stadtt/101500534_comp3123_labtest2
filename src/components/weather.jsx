@@ -35,6 +35,7 @@ function ViewWeather(){
         weatherAPI.getCity(city)
         .then(response => {
             setDetails(response)
+            setCity("")
         })
         .catch(error =>{
             console.error("there was an error changing city ", error)
@@ -45,7 +46,7 @@ function ViewWeather(){
 
     useEffect(()=>{
         getWeatherDetails()
-    },[city])
+    },[])
     if (!details) {
     return <div>Loading weather...</div>;
   }
