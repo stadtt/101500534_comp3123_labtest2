@@ -65,7 +65,7 @@ function ViewWeather(){
             <p > longitude: {details.coord.lon} </p>
              <p >latitude: {details.coord.lat} </p>
             </div> 
-             <img src={url} alt={details.weather[0].description}  />
+             <img src={url}   />
             <div className="border border-5 p-3 rounded mb-3" >
                
                  <p >{details.weather[0].description}</p>
