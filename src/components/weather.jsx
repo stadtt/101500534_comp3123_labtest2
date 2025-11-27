@@ -59,30 +59,29 @@ function ViewWeather(){
 
     return(
         <div className="container mt-4 d-flex gap-4 align-items-start">
-            <h1 className="text-center mb-4" >{details.name}</h1>
+           <div> 
+            <h1 className="mb-3" >{details.name}</h1>
             
-            <div className="border border-5 p-3 rounded mb-3">
-            <p > longitude: {details.coord.lon} </p>
-             <p >latitude: {details.coord.lat} </p>
+            <div className="mb-2">
+            <p className="mb-1"> longitude: {details.coord.lon} </p>
+             <p className="mb-1" >latitude: {details.coord.lat} </p>
             </div> 
              <img src={url}   />
-            <div className="border border-5 p-3 rounded mb-3" >
-               
-                 <p >{details.weather[0].description}</p>
-                <p >{details.weather[0].main}</p>
+            <div className="mb-2" >
+                <p className="fw-semibold mb-1">{details.weather[0].main}</p>
             </div>
-            <div className="border border-5 p-3 rounded mb-3" >
-                <p >Temperature: {temp}</p>
-                 <p >Pressure: {details.main.pressure}</p>
-                 <p >Humidty: {details.main.humidity}</p>
-                 <p >Wind: {details.main.pressure}</p>
+            <div cclassName="mb-2" >
+                <p className="mb-1">Temperature: {temp}</p>
+                 <p className="mb-1">Pressure: {details.main.pressure}</p>
+                 <p className="mb-1">Humidty: {details.main.humidity}</p>
+                 <p className="mb-1" >Wind: {details.main.pressure}</p>
             </div>
 
-            <div className="text-center" >
+            <div className="text-center  card p-3 shadow-sm" >
                 <form onSubmit={handleSubmit}>
                 <div>
-                  <label>City: </label>
-                  <input type="text" name="city" value= {city} onChange={(e) => setCity(e.target.value)} />
+                  <label className="form-label">City: </label>
+                  <input className="form-control" type="text" name="city" value= {city} onChange={(e) => setCity(e.target.value)} />
                   
                  </div>     
 
@@ -90,6 +89,7 @@ function ViewWeather(){
                 </form>
             </div>
         
+            </div>
         </div>
     )
 }

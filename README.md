@@ -1,9 +1,12 @@
-![alt text](image-2.png)
 
-default when you run the app it will auto generate with toronto
+![alt text](<Screenshot 2025-11-27 174203.png>)
 
+output of launch
 
+![alt text](<Screenshot 2025-11-27 174218.png>)
 
-![alt text](image-3.png)
+output if change city to london
 
-type london or vancouver in change city and it will update
+![alt text](<Screenshot 2025-11-27 174228.png>)
+
+output if change city to tokyo
