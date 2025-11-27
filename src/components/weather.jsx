@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import weatherAPI from "../api/weatherAPI";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ViewWeather(){
     const[details, setDetails] = useState(null)
@@ -57,33 +58,35 @@ function ViewWeather(){
     const temp = (details.main.temp  -273.15).toFixed(2)
 
     return(
-        <div>
-            <h1>{details.name}</h1>
-            <div>
+        <div className="container mt-4 d-flex gap-4 align-items-start">
+            <h1 className="text-center mb-4" >{details.name}</h1>
+            
+            <div className="border border-5 p-3 rounded mb-3">
             <p > longitude: {details.coord.lon} </p>
              <p >latitude: {details.coord.lat} </p>
             </div> 
-            <div>
-                <img src={url} alt={details.weather[0].description} />
+             <img src={url} alt={details.weather[0].description}  />
+            <div className="border border-5 p-3 rounded mb-3" >
+               
                  <p >{details.weather[0].description}</p>
                 <p >{details.weather[0].main}</p>
             </div>
-            <div>
+            <div className="border border-5 p-3 rounded mb-3" >
                 <p >Temperature: {temp}</p>
                  <p >Pressure: {details.main.pressure}</p>
                  <p >Humidty: {details.main.humidity}</p>
                  <p >Wind: {details.main.pressure}</p>
             </div>
 
-            <div>
+            <div className="text-center" >
                 <form onSubmit={handleSubmit}>
                 <div>
-                  <label>city: </label>
+                  <label>City: </label>
                   <input type="text" name="city" value= {city} onChange={(e) => setCity(e.target.value)} />
                   
                  </div>     
 
-                <button type="submit">Change City</button>    
+                <button  className="btn btn-primary" type="submit">Change City</button>    
                 </form>
             </div>
         
