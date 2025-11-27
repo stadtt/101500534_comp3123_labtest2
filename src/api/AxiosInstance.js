@@ -1,6 +1,6 @@
 import axios from "axios";
 console.log('What is axios?', axios)
-require("dotenv").config()
+
 
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 

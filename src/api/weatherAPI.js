@@ -8,7 +8,7 @@ const weatherAPI = {
             const response = await axiosInstance.get('/weather', {
              params: {
             q: 'Toronto',
-            appid: process.env.api_key 
+            appid: "ad1ef316b4506bcd3e033d407b9d004e"
         }
     })
 
