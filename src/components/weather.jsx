@@ -47,9 +47,15 @@ function ViewWeather(){
     useEffect(()=>{
         getWeatherDetails()
     },[])
+
+
     if (!details) {
     return <div>Loading weather...</div>;
   }
+    const code = details.weather[0].icon;
+    const url = `http://openweathermap.org/img/wn/${code}@2x.png`;
+    const temp = (details.main.temp  -273.15).toFixed(2)
+
     return(
         <div>
             <h1>{details.name}</h1>
@@ -58,10 +64,12 @@ function ViewWeather(){
              <p >latitude: {details.coord.lat} </p>
             </div> 
             <div>
+                <img src={url} alt={details.weather[0].description} />
                  <p >{details.weather[0].description}</p>
                 <p >{details.weather[0].main}</p>
             </div>
             <div>
+                <p >Temperature: {temp}</p>
                  <p >Pressure: {details.main.pressure}</p>
                  <p >Humidty: {details.main.humidity}</p>
                  <p >Wind: {details.main.pressure}</p>
